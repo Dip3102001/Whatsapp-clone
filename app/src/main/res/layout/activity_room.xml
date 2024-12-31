@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_image"
+    tools:context=".Room">
+
+    <Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#075E54"
+        android:titleTextColor="@color/black">
+
+        <ImageView
+            android:id="@+id/imageViewInsideToolbar"
+            android:layout_width="45sp"
+            android:layout_height="45sp"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/ic_baseline_face_24" />
+
+        <TextView
+            android:id="@+id/textViewInsideToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
+            android:text="name goes here..."
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/menuInsideToolbar"
+            android:layout_width="45sp"
+            android:layout_height="45sp"
+            android:fitsSystemWindows="true"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_baseline_menu_24" />
+
+    </Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayoutInsideRoom"
+        android:layout_below="@id/toolBar"
+        android:scrollbarStyle="insideInset">
+
+        <LinearLayout
+            android:id="@+id/chatArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInsideRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextInsideRoom"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_weight="@integer/material_motion_duration_medium_2"
+            android:background="@color/white"
+            android:hint="   #Message"
+            android:layout_gravity="center"
+            android:textColorHint="@color/black" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_send_24"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
